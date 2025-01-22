@@ -176,6 +176,16 @@
             margin-bottom: 10px;
         }
 
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -199,17 +209,33 @@
 <body>
     <div class="container">
         <h1>🔍 Menggali Firman dengan F.O.K.U.S.: Petunjuk Praktis untuk Transformasi</h1>
+        <div style="margin-bottom: 20px;">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" style="margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
         <div class="section">
-            <h2>Program L.I.G.H.T. - Minggu 2: Metode F.O.K.U.S.</h2>
+            <h2>Program F.O.K.U.S. - Minggu 2: Metode F.O.K.U.S.</h2>
             <h3>🎯 Tujuan Minggu Ini</h3>
             <ul>
-                <li><strong>Memahami</strong>: Setiap langkah dalam metode F.O.K.U.S. secara mendalam dan mengapa setiap
-                    langkah itu penting.</li>
-                <li><strong>Menerapkan</strong>: Metode F.O.K.U.S. dalam studi Alkitab pribadi dengan percaya diri.</li>
-                <li><strong>Mengembangkan</strong>: Kemampuan untuk menggali makna, prinsip, dan aplikasi Firman Tuhan
-                    secara efektif dan transformatif.</li>
-                <li><strong>Membangun</strong>: Kebiasaan studi Alkitab yang terstruktur, konsisten, dan menghasilkan
-                    pertumbuhan rohani.</li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="tujuan1">
+                    <label for="tujuan1"><strong>Memahami</strong>: Setiap langkah dalam metode F.O.K.U.S. secara mendalam dan mengapa setiap
+                    langkah itu penting.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="tujuan2">
+                    <label for="tujuan2"><strong>Menerapkan</strong>: Metode F.O.K.U.S. dalam studi Alkitab pribadi dengan percaya diri.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="tujuan3">
+                    <label for="tujuan3"><strong>Mengembangkan</strong>: Kemampuan untuk menggali makna, prinsip, dan aplikasi Firman Tuhan
+                    secara efektif dan transformatif.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="tujuan4">
+                    <label for="tujuan4"><strong>Membangun</strong>: Kebiasaan studi Alkitab yang terstruktur, konsisten, dan menghasilkan
+                    pertumbuhan rohani.</label>
+                </li>
             </ul>
         </div>
         <div class="key-verse">
@@ -224,15 +250,26 @@
                 karun rohani yang tak ternilai harganya. Metode F.O.K.U.S. adalah peta dan alat yang kita butuhkan untuk
                 menggali kekayaan Firman Tuhan secara mendalam. Metode ini membantu kita:</p>
             <ul>
-                <li><strong>Memahami Konteks yang Mendalam:</strong> Menggali latar belakang sejarah, budaya, dan
-                    penulis dari teks, sehingga kita tidak salah menafsirkan pesan aslinya.</li>
-                <li><strong>Menemukan Makna yang Tersembunyi:</strong> Mengidentifikasi pesan utama dan prinsip-prinsip
-                    kebenaran yang mungkin terlewatkan jika kita hanya membaca sekilas.</li>
-                <li><strong>Menerapkan Kebenaran dengan Tepat:</strong> Mengubah pemahaman menjadi tindakan nyata dalam
-                    hidup sehari-hari, sehingga Firman Tuhan tidak hanya menjadi pengetahuan, tetapi juga pengalaman.
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat1">
+                    <label for="manfaat1"><strong>Memahami Konteks yang Mendalam:</strong> Menggali latar belakang sejarah, budaya, dan
+                    penulis dari teks, sehingga kita tidak salah menafsirkan pesan aslinya.</label>
                 </li>
-                <li><strong>Bertumbuh dalam Iman yang Kokoh:</strong> Memperdalam hubungan kita dengan Tuhan melalui
-                    Firman-Nya, sehingga iman kita tidak hanya dangkal, tetapi berakar kuat dalam kebenaran.</li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat2">
+                    <label for="manfaat2"><strong>Menemukan Makna yang Tersembunyi:</strong> Mengidentifikasi pesan utama dan prinsip-prinsip
+                    kebenaran yang mungkin terlewatkan jika kita hanya membaca sekilas.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat3">
+                    <label for="manfaat3"><strong>Menerapkan Kebenaran dengan Tepat:</strong> Mengubah pemahaman menjadi tindakan nyata dalam
+                    hidup sehari-hari, sehingga Firman Tuhan tidak hanya menjadi pengetahuan, tetapi juga pengalaman.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat4">
+                    <label for="manfaat4"><strong>Bertumbuh dalam Iman yang Kokoh:</strong> Memperdalam hubungan kita dengan Tuhan melalui
+                    Firman-Nya, sehingga iman kita tidak hanya dangkal, tetapi berakar kuat dalam kebenaran.</label>
+                </li>
             </ul>
         </div>
         <div class="section">
@@ -251,11 +288,20 @@
                         Tuhan secara langsung.</p>
                     <p><strong>Tindakan:</strong></p>
                     <ul>
-                        <li>Pilih bagian Alkitab (pasal, perikop, atau ayat) yang ingin dipelajari.</li>
-                        <li>Baca teks dengan seksama, berulang kali jika perlu, dalam berbagai terjemahan (misalnya,
-                            NIV, ESV, NKJV, Terjemahan Baru).</li>
-                        <li>Tandai atau catat kata-kata, frasa, atau ide yang menonjol. Perhatikan kata-kata yang
-                            diulang atau yang terasa penting.</li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="firman1">
+                            <label for="firman1">Pilih bagian Alkitab (pasal, perikop, atau ayat) yang ingin dipelajari.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="firman2">
+                            <label for="firman2">Baca teks dengan seksama, berulang kali jika perlu, dalam berbagai terjemahan (misalnya,
+                            NIV, ESV, NKJV, Terjemahan Baru).</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="firman3">
+                            <label for="firman3">Tandai atau catat kata-kata, frasa, atau ide yang menonjol. Perhatikan kata-kata yang
+                            diulang atau yang terasa penting.</label>
+                        </li>
                     </ul>
                     <p><strong>Contoh Pertanyaan:</strong> Apa yang tertulis dalam teks ini secara harfiah? Apa tema
                         utama dari bagian ini? Apakah ada kata atau frasa yang menarik perhatian saya?</p>
@@ -270,16 +316,28 @@
                         kita dapat melihat gambaran yang lebih besar.</p>
                     <p><strong>Tindakan:</strong></p>
                     <ul>
-                        <li><strong>Identifikasi Elemen Penting:</strong> Siapa yang berbicara? Kepada siapa? Kapan dan
-                            di mana peristiwa ini terjadi? Mengapa ini penting?</li>
-                        <li><strong>Analisis Struktur Teks:</strong> Apakah ada pola atau struktur yang terlihat?
-                            Bagaimana penulis menyusun argumen atau cerita?</li>
-                        <li><strong>Perhatikan Gaya Bahasa:</strong> Apakah teks ini menggunakan narasi, puisi,
-                            perumpamaan, hukum, atau nubuat? Gaya bahasa mempengaruhi cara kita memahami teks.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan alat AI seperti ChatGPT untuk
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="observasi1">
+                            <label for="observasi1"><strong>Identifikasi Elemen Penting:</strong> Siapa yang berbicara? Kepada siapa? Kapan dan
+                            di mana peristiwa ini terjadi? Mengapa ini penting?</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="observasi2">
+                            <label for="observasi2"><strong>Analisis Struktur Teks:</strong> Apakah ada pola atau struktur yang terlihat?
+                            Bagaimana penulis menyusun argumen atau cerita?</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="observasi3">
+                            <label for="observasi3"><strong>Perhatikan Gaya Bahasa:</strong> Apakah teks ini menggunakan narasi, puisi,
+                            perumpamaan, hukum, atau nubuat? Gaya bahasa mempengaruhi cara kita memahami teks.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="observasi4">
+                            <label for="observasi4"><strong>Gunakan AI untuk Membantu:</strong> Gunakan alat AI seperti ChatGPT untuk
                             mendapatkan penjelasan tambahan atau klarifikasi tentang konteks historis dan budaya.
                             Misalnya, "Apa latar belakang sejarah dari [bagian Alkitab]?" atau "Bagaimana gaya bahasa
-                            dalam [bagian Alkitab] mempengaruhi maknanya?"</li>
+                            dalam [bagian Alkitab] mempengaruhi maknanya?"</label>
+                        </li>
                     </ul>
                     <p><strong>Contoh Pertanyaan:</strong> Siapa tokoh-tokoh dalam teks ini? Apa latar belakang sejarah
                         dan budayanya? Apa tujuan penulis menulis bagian ini? Apakah ada pola atau struktur yang
@@ -296,13 +354,22 @@
                         sehingga kita tidak hanya memahami teks, tetapi juga memahami kehendak Allah.</p>
                     <p><strong>Tindakan:</strong></p>
                     <ul>
-                        <li><strong>Tentukan Pesan Inti:</strong> Apa kebenaran utama yang ingin disampaikan penulis?
-                            Bagaimana bagian ini cocok dalam narasi Alkitab yang lebih besar?</li>
-                        <li><strong>Hubungkan dengan Tema Alkitab Lain:</strong> Bagaimana bagian ini berhubungan dengan
-                            tema-tema utama Alkitab?</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk membandingkan interpretasi dari
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="konsep1">
+                            <label for="konsep1"><strong>Tentukan Pesan Inti:</strong> Apa kebenaran utama yang ingin disampaikan penulis?
+                            Bagaimana bagian ini cocok dalam narasi Alkitab yang lebih besar?</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="konsep2">
+                            <label for="konsep2"><strong>Hubungkan dengan Tema Alkitab Lain:</strong> Bagaimana bagian ini berhubungan dengan
+                            tema-tema utama Alkitab?</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="konsep3">
+                            <label for="konsep3"><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk membandingkan interpretasi dari
                             berbagai sumber atau untuk mendapatkan perspektif baru. Misalnya, "Apa prinsip utama dari
-                            [bagian Alkitab] menurut berbagai komentar teologis?"</li>
+                            [bagian Alkitab] menurut berbagai komentar teologis?"</label>
+                        </li>
                     </ul>
                     <p><strong>Contoh Pertanyaan:</strong> Apa prinsip utama yang diajarkan dalam teks ini? Bagaimana
                         prinsip ini berhubungan dengan bagian lain dalam Alkitab? Apa implikasi teologis dari prinsip
@@ -319,15 +386,27 @@
                         sehingga kita dapat mengkomunikasikan kebenaran ini kepada orang lain.</p>
                     <p><strong>Tindakan:</strong></p>
                     <ul>
-                        <li><strong>Tulis Ringkasan:</strong> Jelaskan dengan kata-kata Anda sendiri apa yang Anda
-                            pahami dari teks ini.</li>
-                        <li><strong>Diskusikan dengan Orang Lain:</strong> Berbagi pemahaman dengan kelompok atau mentor
-                            untuk mendapatkan perspektif yang berbeda.</li>
-                        <li><strong>Gunakan Sumber Lain:</strong> Manfaatkan kamus Alkitab, komentar, atau konkordansi
-                            untuk memperdalam pemahaman.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan penjelasan tambahan
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="uraian1">
+                            <label for="uraian1"><strong>Tulis Ringkasan:</strong> Jelaskan dengan kata-kata Anda sendiri apa yang Anda
+                            pahami dari teks ini.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="uraian2">
+                            <label for="uraian2"><strong>Diskusikan dengan Orang Lain:</strong> Berbagi pemahaman dengan kelompok atau mentor
+                            untuk mendapatkan perspektif yang berbeda.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="uraian3">
+                            <label for="uraian3"><strong>Gunakan Sumber Lain:</strong> Manfaatkan kamus Alkitab, komentar, atau konkordansi
+                            untuk memperdalam pemahaman.</label>
+                        </li>
+                         <li class="checkbox-container">
+                            <input type="checkbox" id="uraian4">
+                            <label for="uraian4"><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan penjelasan tambahan
                             atau untuk memeriksa pemahaman Anda. Misalnya, "Bagaimana saya bisa menjelaskan [bagian
-                            Alkitab] kepada orang lain?"</li>
+                            Alkitab] kepada orang lain?"</label>
+                        </li>
                     </ul>
                     <p><strong>Contoh Pertanyaan:</strong> Bagaimana saya akan menjelaskan teks ini kepada orang lain
                         yang belum pernah membacanya? Apa implikasi teologis dari teks ini? Apakah ada bagian yang sulit
@@ -344,15 +423,27 @@
                         transformasi yang nyata, sehingga kita menjadi lebih serupa dengan Kristus.</p>
                     <p><strong>Tindakan:</strong></p>
                     <ul>
-                        <li><strong>Refleksi Pribadi:</strong> Pertimbangkan bagaimana prinsip-prinsip tersebut dapat
-                            mempengaruhi sikap, nilai, dan tindakan Anda.</li>
-                        <li><strong>Tetapkan Tujuan SMART:</strong> Tetapkan tujuan atau perubahan perilaku yang
-                            spesifik, terukur, dapat dicapai, relevan, dan berbatas waktu.</li>
-                        <li><strong>Berdoa untuk Bimbingan:</strong> Mintalah Roh Kudus untuk memampukan Anda untuk
-                            hidup sesuai dengan Firman Tuhan.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan saran praktis
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="sikap1">
+                            <label for="sikap1"><strong>Refleksi Pribadi:</strong> Pertimbangkan bagaimana prinsip-prinsip tersebut dapat
+                            mempengaruhi sikap, nilai, dan tindakan Anda.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="sikap2">
+                            <label for="sikap2"><strong>Tetapkan Tujuan SMART:</strong> Tetapkan tujuan atau perubahan perilaku yang
+                            spesifik, terukur, dapat dicapai, relevan, dan berbatas waktu.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="sikap3">
+                            <label for="sikap3"><strong>Berdoa untuk Bimbingan:</strong> Mintalah Roh Kudus untuk memampukan Anda untuk
+                            hidup sesuai dengan Firman Tuhan.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="sikap4">
+                             <label for="sikap4"><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan saran praktis
                             tentang bagaimana menerapkan prinsip-prinsip Alkitab dalam kehidupan sehari-hari. Misalnya,
-                            "Apa langkah praktis yang bisa saya ambil untuk menerapkan [prinsip Alkitab]?"</li>
+                            "Apa langkah praktis yang bisa saya ambil untuk menerapkan [prinsip Alkitab]?"</label>
+                        </li>
                     </ul>
                     <p><strong>Contoh Pertanyaan:</strong> Bagaimana teks ini mengubah cara pandang saya tentang diri
                         saya, orang lain, atau dunia? Apa tindakan konkret yang akan saya ambil berdasarkan teks ini?
@@ -410,36 +501,51 @@
         <div class="section">
             <h4>D. Manfaat Menggunakan Metode F.O.K.U.S.</h4>
             <ul>
-                <li><strong>Terstruktur dan Sistematis:</strong> Membantu kita mempelajari Alkitab dengan
-                    langkah-langkah yang jelas dan teratur, sehingga tidak ada aspek yang terlewatkan.</li>
-                <li><strong>Mendalam dan Komprehensif:</strong> Mendorong kita untuk menggali makna teks secara
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat5">
+                    <label for="manfaat5"><strong>Terstruktur dan Sistematis:</strong> Membantu kita mempelajari Alkitab dengan
+                    langkah-langkah yang jelas dan teratur, sehingga tidak ada aspek yang terlewatkan.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat6">
+                    <label for="manfaat6"><strong>Mendalam dan Komprehensif:</strong> Mendorong kita untuk menggali makna teks secara
                     menyeluruh, tidak hanya di permukaan, sehingga kita mendapatkan pemahaman yang lebih kaya dan
-                    mendalam.</li>
-                <li><strong>Praktis dan Relevan:</strong> Membantu kita menerapkan Firman Tuhan dalam kehidupan
+                    mendalam.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat7">
+                    <label for="manfaat7"><strong>Praktis dan Relevan:</strong> Membantu kita menerapkan Firman Tuhan dalam kehidupan
                     sehari-hari, sehingga Firman tidak hanya menjadi pengetahuan, tetapi juga pengalaman yang nyata dan
-                    relevan.</li>
-                <li><strong>Transformasi dan Pertumbuhan:</strong> Membawa perubahan dalam cara berpikir, bersikap, dan
+                    relevan.</label>
+                </li>
+                <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat8">
+                    <label for="manfaat8"><strong>Transformasi dan Pertumbuhan:</strong> Membawa perubahan dalam cara berpikir, bersikap, dan
                     bertindak, serta memperdalam hubungan kita dengan Tuhan dan membuat kita semakin serupa dengan
-                    Kristus.</li>
-                <li><strong>Penggunaan Teknologi:</strong> Dengan memanfaatkan alat AI, kita dapat memperluas wawasan
+                    Kristus.</label>
+                </li>
+                 <li class="checkbox-container">
+                    <input type="checkbox" id="manfaat9">
+                    <label for="manfaat9"><strong>Penggunaan Teknologi:</strong> Dengan memanfaatkan alat AI, kita dapat memperluas wawasan
                     dan mendapatkan perspektif baru yang mungkin tidak kita pikirkan sebelumnya, serta memeriksa
-                    pemahaman kita dengan lebih baik.</li>
+                    pemahaman kita dengan lebih baik.</label>
+                </li>
             </ul>
         </div>
         <div class="journal">
             <h3>📝 Jurnal Eksplorasi</h3>
             <h4>Peta Pemahaman</h4>
             <p>Catat level pemahamanmu (1-5 ⭐):</p>
-            <p>Firman ⭐___ ⭐___</p>
-            <p>Observasi ⭐___ ⭐___</p>
-            <p>Konsep ⭐___ ⭐___</p>
-            <p>Uraian ⭐___ ⭐___</p>
-            <p>Sikap ⭐___ ⭐___</p>
+            <p>Firman           <input type="text" id="firman_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"> </p>
+            <p>Observasi        <input type="text" id="observasi_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
+            <p>Konsep           <input type="text" id="konsep_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
+            <p>Uraian           <input type="text" id="uraian_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
+            <p>Sikap            <input type="text" id="sikap_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
             <h4>Catatan Perjalanan</h4>
             <p>Jawab setelah eksplorasi:</p>
-            <p>Penemuan baruku:</p>
-            <p>Yang membuatku kagum:</p>
-            <p>Yang ingin kupelajari lebih dalam:</p>
+            <p>Penemuan baruku: <textarea id="penemuan_baru" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
+            <p>Yang membuatku kagum: <textarea id="kagum" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
+            <p>Yang ingin kupelajari lebih dalam: <textarea id="pelajari_dalam" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
         </div>
         <div class="challenge">
             <h3>🌐 Digital Challenge</h3>
@@ -447,10 +553,16 @@
                 <li>
                     <h4>Share di media sosial:</h4>
                     <ul>
-                        <li>Bagikan pengalaman Anda menggunakan metode F.O.K.U.S. dalam studi Alkitab pribadi, termasuk
-                            bagaimana AI membantu Anda.</li>
-                        <li>Gunakan hashtag: #LIGHTBibleStudy #FOKUSMethod #BibleStudyJourney #TransformasiFirman
-                            #AIinBibleStudy.</li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="share1">
+                            <label for="share1">Bagikan pengalaman Anda menggunakan metode F.O.K.U.S. dalam studi Alkitab pribadi,
+                            termasuk bagaimana AI membantu Anda.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="share2">
+                            <label for="share2">Gunakan hashtag: #FOKUSBibleStudy #FOKUSMethod #BibleStudyJourney #TransformasiFirman
+                            #AIinBibleStudy.</label>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -458,18 +570,33 @@
                     <ul>
                         <li>Coba eksplorasi dengan ChatGPT menggunakan prompt:
                             <ul>
-                                <li>"Berikan contoh penerapan metode F.O.K.U.S. pada [bagian Alkitab] dan jelaskan
-                                    mengapa setiap langkah penting dalam proses pemahaman."</li>
-                                <li>"Bagaimana metode F.O.K.U.S. dan AI dapat membantu saya mengatasi kebingungan dalam
-                                    memahami Alkitab dan menerapkannya dalam hidup saya?"</li>
-                                <li>"Berikan tips praktis untuk menerapkan metode F.O.K.U.S. dalam studi Alkitab harian,
-                                    termasuk cara menjaga konsistensi dan fokus."</li>
+                                <li class="checkbox-container">
+                                    <input type="checkbox" id="tantangan1">
+                                    <label for="tantangan1">"Berikan contoh penerapan metode F.O.K.U.S. pada [bagian Alkitab] dan jelaskan
+                                    mengapa setiap langkah penting dalam proses pemahaman."</label>
+                                </li>
+                                <li class="checkbox-container">
+                                    <input type="checkbox" id="tantangan2">
+                                    <label for="tantangan2">"Bagaimana metode F.O.K.U.S. dan AI dapat membantu saya mengatasi kebingungan
+                                    dalam memahami Alkitab dan menerapkannya dalam hidup saya?"</label>
+                                </li>
+                                <li class="checkbox-container">
+                                    <input type="checkbox" id="tantangan3">
+                                    <label for="tantangan3">"Berikan tips praktis untuk menerapkan metode F.O.K.U.S. dalam studi Alkitab
+                                    harian, termasuk cara menjaga konsistensi dan fokus."</label>
+                                </li>
                             </ul>
                         </li>
-                        <li>Gunakan aplikasi Alkitab untuk menandai ayat-ayat yang Anda pelajari dengan metode
-                            F.O.K.U.S.</li>
-                        <li>Buat catatan pribadi tentang penerapan metode F.O.K.U.S. dan bagikan refleksi Anda di fitur
-                            catatan aplikasi, atau di grup diskusi online.</li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="tantangan4">
+                            <label for="tantangan4">Gunakan aplikasi Alkitab untuk menandai ayat-ayat yang Anda pelajari dengan metode
+                            F.O.K.U.S.</label>
+                        </li>
+                        <li class="checkbox-container">
+                            <input type="checkbox" id="tantangan5">
+                            <label for="tantangan5">Buat catatan pribadi tentang penerapan metode F.O.K.U.S. dan bagikan refleksi Anda
+                            di fitur catatan aplikasi, atau di grup diskusi online.</label>
+                        </li>
                     </ul>
                 </li>
             </ol>
@@ -484,13 +611,16 @@
             <h3>✨ Refleksi & Doa</h3>
             <p>Tulis di jurnal:</p>
             <p>Apa yang baru kuperoleh tentang metode F.O.K.U.S. dan bagaimana ini mengubah cara saya memandang studi
-                Alkitab?</p>
+                Alkitab? <textarea id="refleksi1" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
             <p>Bagaimana metode ini akan mengubah cara saya belajar Alkitab dan menerapkan Firman Tuhan dalam kehidupan
-                sehari-hari?</p>
+                sehari-hari? <textarea id="refleksi2" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
             <p>Komitmen spesifikku minggu ini adalah... (misalnya, membaca Alkitab setiap hari, berdoa untuk bimbingan,
-                menerapkan satu prinsip dari Firman dalam tindakan, dan menggunakan AI untuk membantu pemahaman).</p>
+                menerapkan satu prinsip dari Firman dalam tindakan, dan menggunakan AI untuk membantu pemahaman). <textarea id="komitmen" style="width: 10 0%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
+    </html>
 
-</html>
