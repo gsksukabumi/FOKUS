@@ -8,44 +8,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            margin: 0;
             color: #333;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #f0f2f5, #e1e5ea);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 30px auto;
             background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            flex: 1;
+            position: relative;
+            overflow: hidden;
         }
 
         h1,
         h2,
         h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
 
         h1 {
             text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            font-size: 2.8em;
+            color: #3498db;
         }
 
         h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 12px;
+            font-size: 2em;
         }
 
         h3 {
-            margin-top: 20px;
+            margin-top: 30px;
+            font-size: 1.6em;
         }
 
         ul {
@@ -54,8 +68,8 @@
         }
 
         ul li {
-            margin-bottom: 8px;
-            padding-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 30px;
             position: relative;
         }
 
@@ -66,50 +80,68 @@
             position: absolute;
             left: 0;
             color: #3498db;
+            transition: color 0.3s ease;
         }
 
         blockquote {
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-left: 5px solid #3498db;
-            margin: 15px 0;
+            background-color: #e8f0fe;
+            padding: 25px;
+            border-left: 8px solid #3498db;
+            margin: 25px 0;
             font-style: italic;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .key-verse {
             text-align: center;
             font-style: italic;
             color: #777;
-            margin: 20px 0;
+            margin: 40px 0;
         }
 
         .steps {
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .step {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f0f8ff;
-            border-radius: 5px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #f8faff;
+            border-radius: 12px;
             border: 1px solid #e1e1e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
         }
 
         .step h4 {
             color: #3498db;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
         }
 
         .step p {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .step ul {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .step ul li::before {
@@ -118,43 +150,49 @@
 
         .example {
             background-color: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .example h4 {
             color: #e74c3c;
+            font-size: 1.4em;
         }
 
         .journal {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border-radius: 5px;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #f8faff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .journal h3 {
             color: #2c3e50;
+            font-size: 1.8em;
         }
 
         .journal p {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .challenge {
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 50px;
+            padding: 40px;
             background-color: #f0f0f0;
-            border-radius: 5px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .challenge h3 {
             color: #2c3e50;
+            font-size: 1.8em;
         }
 
         .challenge ul {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .challenge ul li::before {
@@ -162,65 +200,158 @@
         }
 
         .reflection {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border-radius: 5px;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #f8faff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .reflection h3 {
             color: #2c3e50;
+            font-size: 1.8em;
         }
 
         .reflection p {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .checkbox-container {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .checkbox-container input[type="checkbox"] {
-            margin-right: 10px;
+            margin-right: 20px;
+            transform: scale(1.3);
         }
 
         .error-message {
             color: red;
-            margin-top: 5px;
+            margin-top: 15px;
             display: none;
         }
 
+        /* Image Styles */
+        .header-image {
+            text-align: center;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .header-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .section-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .section-image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .section-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 30px;
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 2.2em;
             }
 
             h2 {
-                font-size: 1.4em;
+                font-size: 1.8em;
             }
 
             h3 {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .fade-in-up {
+            animation: fadeIn 1s ease forwards, slideInUp 1s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .submit-button {
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:active {
+            transform: translateY(1px);
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>🔍 Menggali Firman dengan F.O.K.U.S.: Petunjuk Praktis untuk Transformasi</h1>
-        <div style="margin-bottom: 20px;">
+        <div class="header-image">
+            <img src="https://placekitten.com/800/300" alt="Header Image">
+        </div>
+        <h1 class="fade-in">🔍 Menggali Firman dengan F.O.K.U.S.: Petunjuk Praktis untuk Transformasi</h1>
+        <div style="margin-bottom: 20px;" class="fade-in-up">
             <label for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama" style="margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;">
+            <input type="text" id="nama" name="nama" style="margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
         </div>
         <form id="fokusForm">
-        <div class="section">
+        <div class="section fade-in-up">
             <h2>Program F.O.K.U.S. - Minggu 2: Metode F.O.K.U.S.</h2>
              <div class="checkbox-container">
                 <input type="checkbox" id="tujuan_checkbox" name="tujuan_checkbox">
@@ -236,11 +367,11 @@
                     pertumbuhan rohani.</li>
             </ul>
         </div>
-        <div class="key-verse">
+        <div class="key-verse fade-in-up">
             <p>📖 Ayat Kunci: "Berusahalah supaya engkau layak di hadapan Allah sebagai seorang pekerja yang tidak usah
                 malu, yang berterus terang memberitakan perkataan kebenaran." (2 Timotius 2:15)</p>
         </div>
-        <div class="section">
+        <div class="section fade-in-up">
             <div class="checkbox-container">
                 <input type="checkbox" id="pendalaman_checkbox" name="pendalaman_checkbox">
                 <label for="pendalaman_checkbox"><h3>🌟 Pendalaman Materi</h3></label>
@@ -262,7 +393,10 @@
                     Firman-Nya, sehingga iman kita tidak hanya dangkal, tetapi berakar kuat dalam kebenaran.</li>
             </ul>
         </div>
-        <div class="section">
+         <div class="section-image fade-in-up">
+            <img src="https://placekitten.com/600/200" alt="Section Image">
+        </div>
+        <div class="section fade-in-up">
             <div class="checkbox-container">
                 <input type="checkbox" id="metode_checkbox" name="metode_checkbox">
                 <label for="metode_checkbox"><h4>B. Memperkenalkan Metode F.O.K.U.S.: Langkah Demi Langkah</h4></label>
@@ -279,290 +413,284 @@
                         mengandalkan interpretasi orang lain.</p>
                     <p><strong>Tujuan:</strong> Membangun fondasi pemahaman yang kuat tentang apa yang dikatakan Firman
                         Tuhan secara langsung.</p>
-                    <p><strong>Tindakan:</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>Pilih bagian Alkitab (pasal, perikop, atau ayat) yang ingin dipelajari.</li>
-                        <li>Baca teks dengan seksama, berulang kali jika perlu, dalam berbagai terjemahan (misalnya,
-                            NIV, ESV, NKJV, Terjemahan Baru).</li>
-                        <li>Tandai atau catat kata-kata, frasa, atau ide yang menonjol. Perhatikan kata-kata yang
-                            diulang atau yang terasa penting.</li>
-                    </ul>
-                    <p><strong>Contoh Pertanyaan:</strong> Apa yang tertulis dalam teks ini secara harfiah? Apa tema
-                        utama dari bagian ini? Apakah ada kata atau frasa yang menarik perhatian saya?</p>
+                        <p><strong>Tindakan:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li>Pilih bagian Alkitab (pasal, perikop, atau ayat) yang ingin dipelajari.</li>
+                            <li>Baca teks dengan seksama, berulang kali jika perlu, dalam berbagai terjemahan (misalnya,
+                                NIV, ESV, NKJV, Terjemahan Baru).</li>
+                            <li>Tandai atau catat kata-kata, frasa, atau ide yang menonjol. Perhatikan kata-kata yang
+                                diulang atau yang terasa penting.</li>
+                        </ul>
+                        <p><strong>Contoh Pertanyaan:</strong> Apa yang tertulis dalam teks ini secara harfiah? Apa tema
+                            utama dari bagian ini? Apakah ada kata atau frasa yang menarik perhatian saya?</p>
+                    </div>
+                    <div class="step">
+                        <h4>2. Observasi (Observation)</h4>
+                        <p><strong>Deskripsi:</strong> Mengamati detail dan konteks dari bagian Alkitab yang dibaca. Ini
+                            seperti menggunakan kaca pembesar untuk melihat lebih dekat.</p>
+                        <p><strong>Mengapa Ini Penting?</strong> Konteks adalah kunci untuk memahami makna. Tanpa observasi
+                            yang cermat, kita bisa salah menafsirkan teks dan menerapkan kebenaran dengan tidak tepat.</p>
+                        <p><strong>Tujuan:</strong> Memahami latar belakang, tujuan, dan detail penting dari teks, sehingga
+                            kita dapat melihat gambaran yang lebih besar.</p>
+                        <p><strong>Tindakan:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Identifikasi Elemen Penting:</strong> Siapa yang berbicara? Kepada siapa? Kapan dan
+                                di mana peristiwa ini terjadi? Mengapa ini penting?</li>
+                            <li><strong>Analisis Struktur Teks:</strong> Apakah ada pola atau struktur yang terlihat?
+                                Bagaimana penulis menyusun argumen atau cerita?</li>
+                            <li><strong>Perhatikan Gaya Bahasa:</strong> Apakah teks ini menggunakan narasi, puisi,
+                                perumpamaan, hukum, atau nubuat? Gaya bahasa mempengaruhi cara kita memahami teks.</li>
+                            <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan alat AI seperti ChatGPT untuk
+                                mendapatkan penjelasan tambahan atau klarifikasi tentang konteks historis dan budaya.
+                                Misalnya, "Apa latar belakang sejarah dari [bagian Alkitab]?" atau "Bagaimana gaya bahasa
+                                dalam [bagian Alkitab] mempengaruhi maknanya?"</li>
+                        </ul>
+                        <p><strong>Contoh Pertanyaan:</strong> Siapa tokoh-tokoh dalam teks ini? Apa latar belakang sejarah
+                            dan budayanya? Apa tujuan penulis menulis bagian ini? Apakah ada pola atau struktur yang
+                            terlihat dalam teks?</p>
+                    </div>
+                    <div class="step">
+                        <h4>3. Konsep (Concept)</h4>
+                        <p><strong>Deskripsi:</strong> Mengidentifikasi prinsip atau konsep utama yang diajarkan dalam teks.
+                            Ini adalah inti dari pesan yang ingin disampaikan.</p>
+                        <p><strong>Mengapa Ini Penting?</strong> Prinsip-prinsip Alkitab adalah kebenaran abadi yang berlaku
+                            untuk semua orang di semua waktu. Mengidentifikasi konsep utama membantu kita memahami apa yang
+                            Allah ingin kita pelajari.</p>
+                        <p><strong>Tujuan:</strong> Menemukan kebenaran abadi yang dapat diterapkan dalam kehidupan kita,
+                            sehingga kita tidak hanya memahami teks, tetapi juga memahami kehendak Allah.</p>
+                        <p><strong>Tindakan:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Tentukan Pesan Inti:</strong> Apa kebenaran utama yang ingin disampaikan penulis?
+                                Bagaimana bagian ini cocok dalam narasi Alkitab yang lebih besar?</li>
+                            <li><strong>Hubungkan dengan Tema Alkitab Lain:</strong> Bagaimana bagian ini berhubungan dengan
+                                tema-tema utama Alkitab?</li>
+                            <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk membandingkan interpretasi dari
+                                berbagai sumber atau untuk mendapatkan perspektif baru. Misalnya, "Apa prinsip utama dari
+                                [bagian Alkitab] menurut berbagai komentar teologis?"</li>
+                        </ul>
+                        <p><strong>Contoh Pertanyaan:</strong> Apa prinsip utama yang diajarkan dalam teks ini? Bagaimana
+                            prinsip ini berhubungan dengan bagian lain dalam Alkitab? Apa implikasi teologis dari prinsip
+                            ini?</p>
+                    </div>
+                    <div class="step">
+                        <h4>4. Uraian (Explanation)</h4>
+                        <p><strong>Deskripsi:</strong> Menjelaskan bagian tersebut dengan kata-kata sendiri dan dengan
+                            bantuan sumber lain. Ini adalah langkah untuk memastikan pemahaman yang akurat.</p>
+                        <p><strong>Mengapa Ini Penting?</strong> Menjelaskan teks dengan kata-kata sendiri membantu kita
+                            memproses informasi dan memastikan bahwa kita benar-benar memahaminya. Menggunakan sumber lain
+                            membantu kita mendapatkan perspektif yang lebih luas.</p>
+                        <p><strong>Tujuan:</strong> Memastikan pemahaman yang jelas, mendalam, dan akurat tentang teks,
+                            sehingga kita dapat mengkomunikasikan kebenaran ini kepada orang lain.</p>
+                        <p><strong>Tindakan:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Tulis Ringkasan:</strong> Jelaskan dengan kata-kata Anda sendiri apa yang Anda
+                                pahami dari teks ini.</li>
+                            <li><strong>Diskusikan dengan Orang Lain:</strong> Berbagi pemahaman dengan kelompok atau mentor
+                                untuk mendapatkan perspektif yang berbeda.</li>
+                            <li><strong>Gunakan Sumber Lain:</strong> Manfaatkan kamus Alkitab, komentar, atau konkordansi
+                                untuk memperdalam pemahaman.</li>
+                            <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI
+                                untuk mendapatkan penjelasan tambahan
+                                atau untuk memeriksa pemahaman Anda. Misalnya, "Bagaimana saya bisa menjelaskan [bagian
+                                Alkitab] kepada orang lain?"</li>
+                        </ul>
+                        <p><strong>Contoh Pertanyaan:</strong> Bagaimana saya akan menjelaskan teks ini kepada orang lain
+                            yang belum pernah membacanya? Apa implikasi teologis dari teks ini? Apakah ada bagian yang sulit
+                            dipahami dan bagaimana saya bisa mengatasinya?</p>
+                    </div>
+                    <div class="step">
+                        <h4>5. Sikap (Attitude)</h4>
+                        <p><strong>Deskripsi:</strong> Merenungkan perubahan sikap, pola pikir, atau tindakan yang
+                            diperlukan berdasarkan bagian tersebut. Ini adalah langkah untuk transformasi pribadi.</p>
+                        <p><strong>Mengapa Ini Penting?</strong> Tujuan akhir dari studi Alkitab bukanlah hanya untuk
+                            mendapatkan pengetahuan, tetapi untuk mengalami transformasi. Langkah ini memastikan bahwa
+                            Firman Tuhan mengubah kita dari dalam ke luar.</p>
+                        <p><strong>Tujuan:</strong> Menerapkan kebenaran Firman dalam kehidupan sehari-hari dan mengalami
+                            transformasi yang nyata, sehingga kita menjadi lebih serupa dengan Kristus.</p>
+                        <p><strong>Tindakan:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Refleksi Pribadi:</strong> Pertimbangkan bagaimana prinsip-prinsip tersebut dapat
+                                mempengaruhi sikap, nilai, dan tindakan Anda.</li>
+                            <li><strong>Tetapkan Tujuan SMART:</strong> Tetapkan tujuan atau perubahan perilaku yang
+                                spesifik, terukur, dapat dicapai, relevan, dan berbatas waktu.</li>
+                            <li><strong>Berdoa untuk Bimbingan:</strong> Mintalah Roh Kudus untuk memampukan Anda untuk
+                                hidup sesuai dengan Firman Tuhan.</li>
+                            <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan saran praktis
+                                tentang bagaimana menerapkan prinsip-prinsip Alkitab dalam kehidupan sehari-hari. Misalnya,
+                                "Apa langkah praktis yang bisa saya ambil untuk menerapkan [prinsip Alkitab]?"</li>
+                        </ul>
+                        <p><strong>Contoh Pertanyaan:</strong> Bagaimana teks ini mengubah cara pandang saya tentang diri
+                            saya, orang lain, atau dunia? Apa tindakan konkret yang akan saya ambil berdasarkan teks ini?
+                            Bagaimana saya akan membagikan kebenaran ini kepada orang lain?</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <h4>2. Observasi (Observation)</h4>
-                    <p><strong>Deskripsi:</strong> Mengamati detail dan konteks dari bagian Alkitab yang dibaca. Ini
-                        seperti menggunakan kaca pembesar untuk melihat lebih dekat.</p>
-                    <p><strong>Mengapa Ini Penting?</strong> Konteks adalah kunci untuk memahami makna. Tanpa observasi
-                        yang cermat, kita bisa salah menafsirkan teks dan menerapkan kebenaran dengan tidak tepat.</p>
-                    <p><strong>Tujuan:</strong> Memahami latar belakang, tujuan, dan detail penting dari teks, sehingga
-                        kita dapat melihat gambaran yang lebih besar.</p>
-                    <p><strong>Tindakan:</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li><strong>Identifikasi Elemen Penting:</strong> Siapa yang berbicara? Kepada siapa? Kapan dan
-                            di mana peristiwa ini terjadi? Mengapa ini penting?</li>
-                        <li><strong>Analisis Struktur Teks:</strong> Apakah ada pola atau struktur yang terlihat?
-                            Bagaimana penulis menyusun argumen atau cerita?</li>
-                        <li><strong>Perhatikan Gaya Bahasa:</strong> Apakah teks ini menggunakan narasi, puisi,
-                            perumpamaan, hukum, atau nubuat? Gaya bahasa mempengaruhi cara kita memahami teks.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan alat AI seperti ChatGPT untuk
-                            mendapatkan penjelasan tambahan atau klarifikasi tentang konteks historis dan budaya.
-                            Misalnya, "Apa latar belakang sejarah dari [bagian Alkitab]?" atau "Bagaimana gaya bahasa
-                            dalam [bagian Alkitab] mempengaruhi maknanya?"</li>
-                    </ul>
-                    <p><strong>Contoh Pertanyaan:</strong> Siapa tokoh-tokoh dalam teks ini? Apa latar belakang sejarah
-                        dan budayanya? Apa tujuan penulis menulis bagian ini? Apakah ada pola atau struktur yang
-                        terlihat dalam teks?</p>
+            </div>
+            <div class="section fade-in-up">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="contoh_checkbox" name="contoh_checkbox">
+                    <label for="contoh_checkbox"><h4>C. Contoh Penerapan Metode F.O.K.U.S. dengan Bantuan AI</h4></label>
                 </div>
-                <div class="step">
-                    <h4>3. Konsep (Concept)</h4>
-                    <p><strong>Deskripsi:</strong> Mengidentifikasi prinsip atau konsep utama yang diajarkan dalam teks.
-                        Ini adalah inti dari pesan yang ingin disampaikan.</p>
-                    <p><strong>Mengapa Ini Penting?</strong> Prinsip-prinsip Alkitab adalah kebenaran abadi yang berlaku
-                        untuk semua orang di semua waktu. Mengidentifikasi konsep utama membantu kita memahami apa yang
-                        Allah ingin kita pelajari.</p>
-                    <p><strong>Tujuan:</strong> Menemukan kebenaran abadi yang dapat diterapkan dalam kehidupan kita,
-                        sehingga kita tidak hanya memahami teks, tetapi juga memahami kehendak Allah.</p>
-                    <p><strong>Tindakan:</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li><strong>Tentukan Pesan Inti:</strong> Apa kebenaran utama yang ingin disampaikan penulis?
-                            Bagaimana bagian ini cocok dalam narasi Alkitab yang lebih besar?</li>
-                        <li><strong>Hubungkan dengan Tema Alkitab Lain:</strong> Bagaimana bagian ini berhubungan dengan
-                            tema-tema utama Alkitab?</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk membandingkan interpretasi dari
-                            berbagai sumber atau untuk mendapatkan perspektif baru. Misalnya, "Apa prinsip utama dari
-                            [bagian Alkitab] menurut berbagai komentar teologis?"</li>
-                    </ul>
-                    <p><strong>Contoh Pertanyaan:</strong> Apa prinsip utama yang diajarkan dalam teks ini? Bagaimana
-                        prinsip ini berhubungan dengan bagian lain dalam Alkitab? Apa implikasi teologis dari prinsip
-                        ini?</p>
+                <p>Mari kita terapkan metode F.O.K.U.S. pada Efesus 6:10-1
+                    8, dengan menggunakan AI untuk membantu dalam tahap Uraian dan Observasi:</p>
+                <div class="example">
+                    <h4>1. Firman (Scripture):</h4>
+                    <p>Baca Efesus 6:10-18 dengan seksama dalam beberapa terjemahan (misalnya, NIV, ESV, Terjemahan Baru).
+                        Bayangkan diri Anda sebagai seorang prajurit yang sedang mempersiapkan diri untuk pertempuran.</p>
                 </div>
-                <div class="step">
-                    <h4>4. Uraian (Explanation)</h4>
-                    <p><strong>Deskripsi:</strong> Menjelaskan bagian tersebut dengan kata-kata sendiri dan dengan
-                        bantuan sumber lain. Ini adalah langkah untuk memastikan pemahaman yang akurat.</p>
-                    <p><strong>Mengapa Ini Penting?</strong> Menjelaskan teks dengan kata-kata sendiri membantu kita
-                        memproses informasi dan memastikan bahwa kita benar-benar memahaminya. Menggunakan sumber lain
-                        membantu kita mendapatkan perspektif yang lebih luas.</p>
-                    <p><strong>Tujuan:</strong> Memastikan pemahaman yang jelas, mendalam, dan akurat tentang teks,
-                        sehingga kita dapat mengkomunikasikan kebenaran ini kepada orang lain.</p>
-                    <p><strong>Tindakan:</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li><strong>Tulis Ringkasan:</strong> Jelaskan dengan kata-kata Anda sendiri apa yang Anda
-                            pahami dari teks ini.</li>
-                        <li><strong>Diskusikan dengan Orang Lain:</strong> Berbagi pemahaman dengan kelompok atau mentor
-                            untuk mendapatkan perspektif yang berbeda.</li>
-                        <li><strong>Gunakan Sumber Lain:</strong> Manfaatkan kamus Alkitab, komentar, atau konkordansi
-                            untuk memperdalam pemahaman.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI
-                            untuk mendapatkan penjelasan tambahan
-                            atau untuk memeriksa pemahaman Anda. Misalnya, "Bagaimana saya bisa menjelaskan [bagian
-                            Alkitab] kepada orang lain?"</li>
-                    </ul>
-                    <p><strong>Contoh Pertanyaan:</strong> Bagaimana saya akan menjelaskan teks ini kepada orang lain
-                        yang belum pernah membacanya? Apa implikasi teologis dari teks ini? Apakah ada bagian yang sulit
-                        dipahami dan bagaimana saya bisa mengatasinya?</p>
+                <div class="example">
+                    <h4>2. Observasi (Observation):</h4>
+                    <p><strong>Tanpa AI:</strong> Perhatikan kata-kata kunci seperti "kekuatan Tuhan," "perlengkapan senjata
+                        Allah," "perlawanan," "kebenaran," "keadilan," "Injil damai sejahtera," "iman," "keselamatan," dan
+                        "Firman Allah." Perhatikan juga bahwa Paulus menggunakan metafora perlengkapan senjata seorang
+                        prajurit Romawi.</p>
+                    <p><strong>Dengan AI:</strong> Sekarang, mari kita gunakan AI untuk memperdalam observasi kita. Ajukan
+                        pertanyaan kepada ChatGPT: "Jelaskan detail perlengkapan senjata seorang prajurit Romawi pada abad
+                        pertama." AI dapat memberikan informasi detail tentang setiap bagian perlengkapan senjata, seperti
+                        helm, baju zirah, perisai, pedang, dan sepatu, serta bagaimana perlengkapan ini digunakan dalam
+                        pertempuran. Ini membantu kita memahami mengapa Paulus memilih metafora ini.</p>
                 </div>
-                <div class="step">
-                    <h4>5. Sikap (Attitude)</h4>
-                    <p><strong>Deskripsi:</strong> Merenungkan perubahan sikap, pola pikir, atau tindakan yang
-                        diperlukan berdasarkan bagian tersebut. Ini adalah langkah untuk transformasi pribadi.</p>
-                    <p><strong>Mengapa Ini Penting?</strong> Tujuan akhir dari studi Alkitab bukanlah hanya untuk
-                        mendapatkan pengetahuan, tetapi untuk mengalami transformasi. Langkah ini memastikan bahwa
-                        Firman Tuhan mengubah kita dari dalam ke luar.</p>
-                    <p><strong>Tujuan:</strong> Menerapkan kebenaran Firman dalam kehidupan sehari-hari dan mengalami
-                        transformasi yang nyata, sehingga kita menjadi lebih serupa dengan Kristus.</p>
-                    <p><strong>Tindakan:</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li><strong>Refleksi Pribadi:</strong> Pertimbangkan bagaimana prinsip-prinsip tersebut dapat
-                            mempengaruhi sikap, nilai, dan tindakan Anda.</li>
-                        <li><strong>Tetapkan Tujuan SMART:</strong> Tetapkan tujuan atau perubahan perilaku yang
-                            spesifik, terukur, dapat dicapai, relevan, dan berbatas waktu.</li>
-                        <li><strong>Berdoa untuk Bimbingan:</strong> Mintalah Roh Kudus untuk memampukan Anda untuk
-                            hidup sesuai dengan Firman Tuhan.</li>
-                        <li><strong>Gunakan AI untuk Membantu:</strong> Gunakan AI untuk mendapatkan saran praktis
-                            tentang bagaimana menerapkan prinsip-prinsip Alkitab dalam kehidupan sehari-hari. Misalnya,
-                            "Apa langkah praktis yang bisa saya ambil untuk menerapkan [prinsip Alkitab]?"</li>
-                    </ul>
-                    <p><strong>Contoh Pertanyaan:</strong> Bagaimana teks ini mengubah cara pandang saya tentang diri
-                        saya, orang lain, atau dunia? Apa tindakan konkret yang akan saya ambil berdasarkan teks ini?
-                        Bagaimana saya akan membagikan kebenaran ini kepada orang lain?</p>
+                <div class="example">
+                    <h4>3. Konsep (Concept):</h4>
+                    <p>Kita harus mengenakan seluruh perlengkapan senjata Allah untuk dapat melawan tipu daya iblis dan
+                        berdiri teguh dalam iman. Ini bukan pertempuran fisik, tetapi pertempuran rohani.</p>
+                </div>
+                <div class="example">
+                    <h4>4. Uraian (Explanation):</h4>
+                    <p><strong>Tanpa AI:</strong> Paulus mengajarkan bahwa kita tidak berjuang melawan manusia, tetapi
+                        melawan kekuatan roh jahat. Kita membutuhkan perlengkapan senjata Allah untuk dapat melawan mereka.
+                    </p>
+                    <p><strong>Dengan AI:</strong> Mari kita gunakan AI untuk memperdalam pemahaman kita. Ajukan pertanyaan
+                        kepada ChatGPT: "Bagaimana perlengkapan senjata Allah dalam Efesus 6:10-18 berhubungan dengan
+                        kehidupan rohani seorang Kristen?" AI dapat memberikan penjelasan tentang bagaimana setiap bagian
+                        perlengkapan senjata melambangkan aspek-aspek penting dalam kehidupan rohani, seperti kebenaran,
+                        keadilan, damai sejahtera, iman, keselamatan, dan Firman Allah. Misalnya, "baju zirah keadilan"
+                        melambangkan hidup yang benar di hadapan Allah, dan "pedang Roh" melambangkan Firman Allah yang kita
+                        gunakan untuk melawan godaan dan kebohongan.</p>
+                </div>
+                <div class="example">
+                    <h4>5. Sikap (Attitude):</h4>
+                    <p>Saya akan berusaha untuk mengenakan seluruh perlengkapan senjata Allah setiap hari dan berdoa untuk
+                        kekuatan dan hikmat dalam menghadapi perlawanan rohani. Saya akan lebih sadar bahwa pertempuran kita
+                        bukan melawan manusia, tetapi melawan kekuatan roh jahat, dan saya akan menggunakan Firman Allah
+                        sebagai senjata utama saya.</p>
                 </div>
             </div>
+            <div class="section fade-in-up">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="manfaat_checkbox" name="manfaat_checkbox">
+                    <label for="manfaat_checkbox"><h4>D. Manfaat Menggunakan Metode F.O.K.U.S.</h4></label>
+                </div>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Terstruktur dan Sistematis:</strong> Membantu kita mempelajari Alkitab dengan
+                        langkah-langkah yang jelas dan teratur, sehingga tidak ada aspek yang terlewatkan.</li>
+                    <li><strong>Mendalam dan Komprehensif:</strong> Mendorong kita untuk menggali makna teks secara
+                        menyeluruh, tidak hanya di permukaan, sehingga kita mendapatkan pemahaman yang lebih kaya dan
+                        mendalam.</li>
+                    <li><strong>Praktis dan Relevan:</strong> Membantu kita menerapkan Firman Tuhan dalam kehidupan
+                        sehari-hari, sehingga Firman tidak hanya menjadi pengetahuan, tetapi juga pengalaman yang nyata dan
+                        relevan.</li>
+                    <li><strong>Transformasi dan Pertumbuhan:</strong> Membawa perubahan dalam cara berpikir, bersikap, dan
+                        bertindak, serta memperdalam hubungan kita dengan Tuhan dan membuat kita semakin serupa dengan
+                        Kristus.</li>
+                    <li><strong>Penggunaan Teknologi:</strong> Dengan memanfaatkan alat AI, kita dapat memperluas wawasan
+                        dan mendapatkan perspektif baru yang mungkin tidak kita pikirkan sebelumnya, serta memeriksa
+                        pemahaman kita dengan lebih baik.</li>
+                </ul>
+            </div>
+            <div class="journal fade-in-up">
+                <h3>📝 Jurnal Eksplorasi</h3>
+                <h4>Peta Pemahaman</h4>
+                <p>Catat level pemahamanmu (1-5 ⭐):</p>
+                <p>Firman           <input type="text" id="firman_level" style="width: 30px; margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"> </p>
+                <p>Observasi        <input type="text" id="observasi_level" style="width: 30px; margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></p>
+                <p>Konsep           <input type="text" id="konsep_level" style="width: 30px; margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></p>
+                <p>Uraian           <input type="text" id="uraian_level" style="width: 30px; margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></p>
+                <p>Sikap            <input type="text" id="sikap_level" style="width: 30px; margin-left: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></p>
+                <h4>Catatan Perjalanan</h4>
+                <p>Jawab setelah eksplorasi:</p>
+                <p>Penemuan baruku: <textarea id="penemuan_baru" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+                <p>Yang membuatku kagum: <textarea id="kagum" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+                <p>Yang ingin kupelajari lebih dalam: <textarea id="pelajari_dalam" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+            </div>
+            <div class="challenge fade-in-up">
+                 <div class="checkbox-container">
+                    <input type="checkbox" id="digital_checkbox" name="digital_checkbox">
+                    <label for="digital_checkbox"><h3>🌐 Digital Challenge</h3></label>
+                </div>
+                <ol style="margin-left: 20px;">
+                    <li>
+                        <h4>Share di media sosial:</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Bagikan pengalaman Anda menggunakan metode F.O.K.U.S. dalam studi Alkitab pribadi,
+                                termasuk bagaimana AI membantu Anda.</li>
+                            <li>Gunakan hashtag: #FOKUSBibleStudy #FOKUSMethod #BibleStudyJourney #TransformasiFirman
+                                #AIinBibleStudy.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Tantangan Belajar dengan AI & Bible App:</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Coba eksplorasi dengan ChatGPT menggunakan prompt:
+                                <ul style="margin-left: 20px;">
+                                    <li>"Berikan contoh penerapan metode F.O.K.U.S. pada [bagian Alkitab] dan jelaskan
+                                        mengapa setiap langkah penting dalam proses pemahaman."</li>
+                                    <li>"Bagaimana metode F.O.K.U.S. dan AI dapat membantu saya mengatasi kebingungan
+                                        dalam memahami Alkitab dan menerapkannya dalam hidup saya?"</li>
+                                    <li>"Berikan tips praktis untuk menerapkan metode F.O.K.U.
+                                        S. dalam studi Alkitab harian,
+                                        termasuk cara menjaga konsistensi dan fokus."</li>
+                                </ul>
+                            </li>
+                            <li>Gunakan aplikasi Alkitab untuk menandai ayat-ayat yang Anda pelajari dengan metode
+                                F.O.K.U.S.</li>
+                            <li>Buat catatan pribadi tentang penerapan metode F.O.K.U.S. dan bagikan refleksi Anda di fitur
+                                catatan aplikasi, atau di grup diskusi online.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="challenge fade-in-up">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="minggu_checkbox" name="minggu_checkbox">
+                    <label for="minggu_checkbox"><h3>📌 Tantangan Minggu Ini</h3></label>
+                </div>
+                <p>Pilih satu bagian Alkitab yang menantang Anda dan terapkan metode F.O.K.U.S. dalam studi pribadi Anda,
+                    termasuk menggunakan AI sebagai alat bantu. Catat setiap langkah dan refleksi Anda dalam jurnal, dan
+                    bagikan pengalaman Anda dengan seorang teman atau mentor.</p>
+            </div>
+            <div class="reflection fade-in-up">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="refleksi_checkbox" name="refleksi_checkbox">
+                    <label for="refleksi_checkbox"><h3>✨ Refleksi & Doa</h3></label>
+                </div>
+                <p>Tulis di jurnal:</p>
+                <p>Apa yang baru kuperoleh tentang metode F.O.K.U.S. dan bagaimana ini mengubah cara saya memandang studi
+                    Alkitab? <textarea id="refleksi_1" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+                <p>Bagaimana metode ini akan mengubah cara saya belajar Alkitab dan menerapkan Firman Tuhan dalam kehidupan
+                    sehari-hari? <textarea id="refleksi_2" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+                <p>Komitmen spesifikku minggu ini adalah... (misalnya, membaca Alkitab setiap hari, berdoa untuk bimbingan,
+                    menerapkan satu prinsip dari Firman dalam tindakan, dan menggunakan AI untuk membantu pemahaman). <textarea id="komitmen" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"></textarea></p>
+            </div>
+            <button type="submit" class="submit-button fade-in-up">Selesai</button>
+            </form>
         </div>
-        <div class="section">
-            <div class="checkbox-container">
-                <input type="checkbox" id="contoh_checkbox" name="contoh_checkbox">
-                <label for="contoh_checkbox"><h4>C. Contoh Penerapan Metode F.O.K.U.S. dengan Bantuan AI</h4></label>
-            </div>
-            <p>Mari kita terapkan metode F.O.K.U.S. pada Efesus 6:10-1
-                8, dengan menggunakan AI untuk membantu dalam tahap Uraian dan Observasi:</p>
-            <div class="example">
-                <h4>1. Firman (Scripture):</h4>
-                <p>Baca Efesus 6:10-18 dengan seksama dalam beberapa terjemahan (misalnya, NIV, ESV, Terjemahan Baru).
-                    Bayangkan diri Anda sebagai seorang prajurit yang sedang mempersiapkan diri untuk pertempuran.</p>
-            </div>
-            <div class="example">
-                <h4>2. Observasi (Observation):</h4>
-                <p><strong>Tanpa AI:</strong> Perhatikan kata-kata kunci seperti "kekuatan Tuhan," "perlengkapan senjata
-                    Allah," "perlawanan," "kebenaran," "keadilan," "Injil damai sejahtera," "iman," "keselamatan," dan
-                    "Firman Allah." Perhatikan juga bahwa Paulus menggunakan metafora perlengkapan senjata seorang
-                    prajurit Romawi.</p>
-                <p><strong>Dengan AI:</strong> Sekarang, mari kita gunakan AI untuk memperdalam observasi kita. Ajukan
-                    pertanyaan kepada ChatGPT: "Jelaskan detail perlengkapan senjata seorang prajurit Romawi pada abad
-                    pertama." AI dapat memberikan informasi detail tentang setiap bagian perlengkapan senjata, seperti
-                    helm, baju zirah, perisai, pedang, dan sepatu, serta bagaimana perlengkapan ini digunakan dalam
-                    pertempuran. Ini membantu kita memahami mengapa Paulus memilih metafora ini.</p>
-            </div>
-            <div class="example">
-                <h4>3. Konsep (Concept):</h4>
-                <p>Kita harus mengenakan seluruh perlengkapan senjata Allah untuk dapat melawan tipu daya iblis dan
-                    berdiri teguh dalam iman. Ini bukan pertempuran fisik, tetapi pertempuran rohani.</p>
-            </div>
-            <div class="example">
-                <h4>4. Uraian (Explanation):</h4>
-                <p><strong>Tanpa AI:</strong> Paulus mengajarkan bahwa kita tidak berjuang melawan manusia, tetapi
-                    melawan kekuatan roh jahat. Kita membutuhkan perlengkapan senjata Allah untuk dapat melawan mereka.
-                </p>
-                <p><strong>Dengan AI:</strong> Mari kita gunakan AI untuk memperdalam pemahaman kita. Ajukan pertanyaan
-                    kepada ChatGPT: "Bagaimana perlengkapan senjata Allah dalam Efesus 6:10-18 berhubungan dengan
-                    kehidupan rohani seorang Kristen?" AI dapat memberikan penjelasan tentang bagaimana setiap bagian
-                    perlengkapan senjata melambangkan aspek-aspek penting dalam kehidupan rohani, seperti kebenaran,
-                    keadilan, damai sejahtera, iman, keselamatan, dan Firman Allah. Misalnya, "baju zirah keadilan"
-                    melambangkan hidup yang benar di hadapan Allah, dan "pedang Roh" melambangkan Firman Allah yang kita
-                    gunakan untuk melawan godaan dan kebohongan.</p>
-            </div>
-            <div class="example">
-                <h4>5. Sikap (Attitude):</h4>
-                <p>Saya akan berusaha untuk mengenakan seluruh perlengkapan senjata Allah setiap hari dan berdoa untuk
-                    kekuatan dan hikmat dalam menghadapi perlawanan rohani. Saya akan lebih sadar bahwa pertempuran kita
-                    bukan melawan manusia, tetapi melawan kekuatan roh jahat, dan saya akan menggunakan Firman Allah
-                    sebagai senjata utama saya.</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="checkbox-container">
-                <input type="checkbox" id="manfaat_checkbox" name="manfaat_checkbox">
-                <label for="manfaat_checkbox"><h4>D. Manfaat Menggunakan Metode F.O.K.U.S.</h4></label>
-            </div>
-            <ul style="margin-left: 20px;">
-                <li><strong>Terstruktur dan Sistematis:</strong> Membantu kita mempelajari Alkitab dengan
-                    langkah-langkah yang jelas dan teratur, sehingga tidak ada aspek yang terlewatkan.</li>
-                <li><strong>Mendalam dan Komprehensif:</strong> Mendorong kita untuk menggali makna teks secara
-                    menyeluruh, tidak hanya di permukaan, sehingga kita mendapatkan pemahaman yang lebih kaya dan
-                    mendalam.</li>
-                <li><strong>Praktis dan Relevan:</strong> Membantu kita menerapkan Firman Tuhan dalam kehidupan
-                    sehari-hari, sehingga Firman tidak hanya menjadi pengetahuan, tetapi juga pengalaman yang nyata dan
-                    relevan.</li>
-                <li><strong>Transformasi dan Pertumbuhan:</strong> Membawa perubahan dalam cara berpikir, bersikap, dan
-                    bertindak, serta memperdalam hubungan kita dengan Tuhan dan membuat kita semakin serupa dengan
-                    Kristus.</li>
-                <li><strong>Penggunaan Teknologi:</strong> Dengan memanfaatkan alat AI, kita dapat memperluas wawasan
-                    dan mendapatkan perspektif baru yang mungkin tidak kita pikirkan sebelumnya, serta memeriksa
-                    pemahaman kita dengan lebih baik.</li>
-            </ul>
-        </div>
-        <div class="journal">
-            <h3>📝 Jurnal Eksplorasi</h3>
-            <h4>Peta Pemahaman</h4>
-            <p>Catat level pemahamanmu (1-5 ⭐):</p>
-            <p>Firman           <input type="text" id="firman_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"> </p>
-            <p>Observasi        <input type="text" id="observasi_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
-            <p>Konsep           <input type="text" id="konsep_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
-            <p>Uraian           <input type="text" id="uraian_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
-            <p>Sikap            <input type="text" id="sikap_level" style="width: 30px; margin-left: 10px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></p>
-            <h4>Catatan Perjalanan</h4>
-            <p>Jawab setelah eksplorasi:</p>
-            <p>Penemuan baruku: <textarea id="penemuan_baru" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-            <p>Yang membuatku kagum: <textarea id="kagum" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-            <p>Yang ingin kupelajari lebih dalam: <textarea id="pelajari_dalam" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-        </div>
-        <div class="challenge">
-             <div class="checkbox-container">
-                <input type="checkbox" id="digital_checkbox" name="digital_checkbox">
-                <label for="digital_checkbox"><h3>🌐 Digital Challenge</h3></label>
-            </div>
-            <ol style="margin-left: 20px;">
-                <li>
-                    <h4>Share di media sosial:</h4>
-                    <ul style="margin-left: 20px;">
-                        <li>Bagikan pengalaman Anda menggunakan metode F.O.K.U.S. dalam studi Alkitab pribadi,
-                            termasuk bagaimana AI membantu Anda.</li>
-                        <li>Gunakan hashtag: #FOKUSBibleStudy #FOKUSMethod #BibleStudyJourney #TransformasiFirman
-                            #AIinBibleStudy.</li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>Tantangan Belajar dengan AI & Bible App:</h4>
-                    <ul style="margin-left: 20px;">
-                        <li>Coba eksplorasi dengan ChatGPT menggunakan prompt:
-                            <ul style="margin-left: 20px;">
-                                <li>"Berikan contoh penerapan metode F.O.K.U.S. pada [bagian Alkitab] dan jelaskan
-                                    mengapa setiap langkah penting dalam proses pemahaman."</li>
-                                <li>"Bagaimana metode F.O.K.U.S. dan AI dapat membantu saya mengatasi kebingungan
-                                    dalam memahami Alkitab dan menerapkannya dalam hidup saya?"</li>
-                                <li>"Berikan tips praktis untuk menerapkan metode F.O.K.U.S. dalam studi Alkitab
-                                    harian, termasuk cara menjaga konsistensi dan fokus."</li>
-                            </ul>
-                        </li>
-                        <li>Gunakan aplikasi Alkitab untuk menandai ayat-ayat yang Anda pelajari dengan metode
-                            F.O.K.U.S.</li>
-                        <li>Buat catatan pribadi tentang penerapan metode F.O.K.U.S. dan bagikan refleksi Anda
-                            di fitur catatan aplikasi, atau di grup diskusi online.</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-        <div class="challenge">
-            <div class="checkbox-container">
-                <input type="checkbox" id="tantangan_minggu_checkbox" name="tantangan_minggu_checkbox">
-                <label for="tantangan_minggu_checkbox"><h3>📌 Tantangan Minggu Ini</h3></label>
-            </div>
-            <p>Pilih satu bagian Alkitab yang menantang Anda dan terapkan metode F.O.K.U.S. dalam studi pribadi Anda,
-                termasuk menggunakan AI sebagai alat bantu. Catat setiap langkah dan refleksi Anda dalam jurnal, dan
-                bagikan pengalaman Anda dengan seorang teman atau mentor.</p>
-        </div>
-        <div class="reflection">
-            <div class="checkbox-container">
-                <input type="checkbox" id="refleksi_checkbox" name="refleksi_checkbox">
-                <label for="refleksi_checkbox"><h3>✨ Refleksi & Doa</h3></label>
-            </div>
-            <p>Tulis di jurnal:</p>
-            <p>Apa yang baru kuperoleh tentang metode F.O.K.U.S. dan bagaimana ini mengubah cara saya memandang studi
-                Alkitab? <textarea id="refleksi1" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-            <p>Bagaimana metode ini akan mengubah cara saya belajar Alkitab dan menerapkan Firman Tuhan dalam kehidupan
-                sehari-hari? <textarea id="refleksi2" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-            <p>Komitmen spesifikku minggu ini adalah... (misalnya, membaca Alkitab setiap hari, berdoa untuk bimbingan,
-                menerapkan satu prinsip dari Firman dalam tindakan, dan menggunakan AI untuk membantu pemahaman). <textarea id="komitmen" style="width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea></p>
-        </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <button type="submit" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
-        </div>
-         <div class="error-message" id="errorMessage">Harap centang semua bagian sebelum submit.</div>
-        </form>
-    </div>
-    <script>
-        document.getElementById('fokusForm').addEventListener('submit', function(event) {
-            const tujuanCheckbox = document.getElementById('tujuan_checkbox');
-            const pendalamanCheckbox = document.getElementById('pendalaman_checkbox');
-            const metodeCheckbox = document.getElementById('metode_checkbox');
-            const contohCheckbox = document.getElementById('contoh_checkbox');
-            const manfaatCheckbox = document.getElementById('manfaat_checkbox');
-            const digitalCheckbox = document.getElementById('digital_checkbox');
-            const tantanganMingguCheckbox = document.getElementById('tantangan_minggu_checkbox');
-            const refleksiCheckbox = document.getElementById('refleksi_checkbox');
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (!tujuanCheckbox.checked || !pendalamanCheckbox.checked || !metodeCheckbox.checked || !contohCheckbox.checked || !manfaatCheckbox.checked || !digitalCheckbox.checked || !tantanganMingguCheckbox.checked || !refleksiCheckbox.checked) {
-                event.preventDefault();
-                errorMessage.style.display = 'block';
-            } else {
-                errorMessage.style.display = 'none';
-                alert('Form submitted!');
-            }
-        });
-    </script>
-</body>
-
-</html>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add('active');
+                    }, 150 * index);
+                });
+    
+                const form = document.getElementById('fokusForm');
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Terima kasih telah mengisi form!');
+                });
+            });
+        </script>
+    </body>
+    
+    </html>
+    
